@@ -13,6 +13,7 @@
 <script>
 export default {
   name: 'FavoriteWidget',
+  emits: ['toggle'],
   data() {
     return {
       is_fav: this.initial_value || false,

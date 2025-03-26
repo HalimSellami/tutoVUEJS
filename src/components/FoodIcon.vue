@@ -2,7 +2,7 @@
     <div
         class="food-icon"
         :title="tooltip"
-        :style="{backgroundImage: `url('${image}')`}">
+        :style="generateFoodIconStyle">
         <FavoriteWidget
             class="fav-widget"
             :initial_value="is_fav"
@@ -59,6 +59,11 @@ export default {
   computed: {
     tooltip() {
       return `${this.name} - ${this.description || 'pas de description disponible'}`;
+    },
+    generateFoodIconStyle() {
+      return {
+        backgroundImage: `url('${this.image}')`,
+      };
     },
   },
 };
