@@ -8,7 +8,7 @@
           :is_fav='f.is_fav'
           :image='f.image'
           :description='f.description'
-          :group='f.groupe' />
+          :group='f.group' />
       </div>
     </FoodAppPageWrapper>
   </div>
@@ -39,7 +39,7 @@ export default {
         },
         {
           // eslint-disable-next-line global-require
-          id: 103, name: 'patate', description: 'Bien ronde et grosse', image: require('@/assets/patate.jpg'), is_fav: false, group: 'Légume',
+          id: 103, name: 'patate', description: 'Bien ronde et grosse', image: require('@/assets/patate.jpg'), is_fav: false, group: 'Legume',
         },
       ],
 

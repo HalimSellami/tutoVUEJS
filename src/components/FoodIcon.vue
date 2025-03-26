@@ -2,7 +2,8 @@
     <div
         class="food-icon"
         :title="tooltip"
-        :style="generateFoodIconStyle">
+        :style="generateFoodIconStyle"
+        :class="generateFoodIconClasses">
         <FavoriteWidget
             class="fav-widget"
             :initial_value="is_fav"
@@ -65,18 +66,30 @@ export default {
         backgroundImage: `url('${this.image}')`,
       };
     },
+    generateFoodIconClasses() {
+      const classes = {};
+      classes['food-group'] = true;
+      classes[`food-group-${this.group}`] = true;
+
+      return classes;
+    },
   },
 };
 </script>
 
 <style scoped>
+
+    /* $food-group-highlight-border: 5px solid black; */
+
     .food-icon{
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: space-between;
         width: 200px;
         height: 200px;
         border: 1px solid grey;
         background-image: url('../assets/défaultPI.jpg');
+        margin: 0px 10px;
     }
 
     .food-name{
@@ -84,5 +97,21 @@ export default {
         text-align: center;
         background-color: rgba(0, 0, 0, 0.5);
         width: 100%;
+    }
+
+    .food-group {
+        box-shadow: 5px 5px #aaa;
+    }
+
+    .food-group-Fruits {
+        border-left: 5px solid green;
+    }
+
+    .food-group-Proteine {
+        border-left: 5px solid green;
+    }
+
+    .food-group-Legume {
+        border-left: 5px solid blue;
     }
 </style>
